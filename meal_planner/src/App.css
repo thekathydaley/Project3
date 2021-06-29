@@ -33,19 +33,25 @@ h1{
   margin-bottom: 3%;
   font: 14pt bold;
   font-family: 'KoHo', sans-serif;
-  background-color: aliceblue;
+  background: rgb(156, 236, 236);
   margin-left: 35%;
   margin-right: 45%; 
 }
 
 .btn{
-  border-radius: 20%;
+  
   background: rgb(156, 236, 236);
   margin: 1%;
-  padding: 5pt;
   font-style: bold;
+  font-size: 18pt;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
   font-family: 'KoHo', sans-serif;
+  border: solid white 2pt;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 10px;
+
+    
 }
 /* 
 
