@@ -1,3 +1,28 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cSpell.ignoreWords": [
+        "acai",
+        "box",
+        "class",
+        "component",
+        "container",
+        "default",
+        "div",
+        "export",
+        "extends",
+        "from",
+        "height",
+        "image",
+        "img",
+        "import",
+        "info",
+        "jpg",
+        "main",
+        "name",
+        "react",
+        "render",
+        "return",
+        "src",
+        "width"
+    ]
 }
