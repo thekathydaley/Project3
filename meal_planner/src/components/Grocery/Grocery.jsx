@@ -9,7 +9,7 @@ class Grocery extends Component {
         this.state = { //to begin a state
             userInput: '', //empty string
             name: "",
-            quantity: 0,
+            quantity: '',
             delete: true,
             list: [],
         }
@@ -18,7 +18,7 @@ class Grocery extends Component {
 
     changeUserInput = (input) => {
         this.setState({
-            userInput: input
+            name: input
         },
             () => console.log(input)
         )
@@ -38,7 +38,14 @@ class Grocery extends Component {
             quantity: this.state.quantity
         }
         console.log(thing)
+        const array= this.state.list;
+        array.push(thing);
+        this.setState({
+            list: array,
+        })
+        console.log(array);
         HelperService.postHelper(thing)
+    
     }
     // addToList(){
     //         //need a variable to act as the list in state
@@ -58,21 +65,34 @@ class Grocery extends Component {
     render() {
         return (
             <div>
-                <input type="text"
-                    value={this.state.userInput}
-                    onChange={
-                        (event) => {
-                            this.changeUserInput(event.target.value)
-                        }} />
-                <input type="text"
+                    <input type="text"
+                    placeholder="How Many?"
                     value={this.state.quantity}
                     onChange={
                         (event) => {
                             this.changeQuantity(event.target.value)
                         }} />
-
-                <button onClick={() => this.addToList(this.state.userInput, this.state.quantity)}>
+                <input type="text"
+                    placeholder="What item?"
+                    value={this.state.name}
+                    onChange={
+                        (event) => {
+                            this.changeUserInput(event.target.value)
+                        }} />
+                <button onClick={() => this.addToList()}>
                     Add An Item To The List</button>
+                
+                <div>
+                <ul>    
+
+                        {this.state.list.map((itemInTheList)=>{
+                        return<li>
+                            Quantity: {itemInTheList.quantity}  |  Item Name: {itemInTheList.name}
+                            </li>
+                     
+                        })}
+                    </ul>   
+                </div>
 
                 {/* <ul>
                         {this.state.list.map((itemInTheList)=>{
@@ -81,9 +101,10 @@ class Grocery extends Component {
                         })}
                     </ul> */}
 
-                <Item1 item={this.state.list} />
+                {/* <Item1 item={this.state.list} /> */}
 
             </div>
+            
 
         );
     }
