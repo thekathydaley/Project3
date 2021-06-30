@@ -7,7 +7,7 @@ const Header = () => {
         return (
         <div>
                         <header className="header">
-                <h1>Welcome Shopper! Let's decide what to make for dinner!</h1>
+                <h1>Let's decide what to make for dinner!</h1>
                 <Link to="/">
                 <button className="btn">Home</button>
                 </Link>    
