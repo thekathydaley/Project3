@@ -6,8 +6,8 @@ class HelperService {
     getHelper(){
         return axios.get(helper_url)
    }
-   postHelper(thing){
-    return axios.post(helper_url, thing)
+   postHelper(input){
+    return axios.post(helper_url, input)
    }
 }
 export default new HelperService();

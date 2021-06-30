@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item1 from './Item1'
+import HelperService from '../../service/Helper';
 
 
 class Grocery extends Component {
@@ -24,12 +25,14 @@ class Grocery extends Component {
 //function to take the user input from state and add to the list
 addToList(input){
         //need a variable to act as the list in state
-        let listArray = this.state.list
-        listArray.push(input)
+        let input = this.state.list
+        // listArray.push(input)
         this.setState({
             list : listArray,
             userInput : ''
         })
+        HelperService().postHelper(input)
+        console.log(input)
 }
 
 // To delete
