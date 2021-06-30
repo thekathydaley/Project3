@@ -64,7 +64,7 @@ class Grocery extends Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                     <input type="text"
                     placeholder="How Many?"
                     value={this.state.quantity}
@@ -82,7 +82,7 @@ class Grocery extends Component {
                 <button onClick={() => this.addToList()}>
                     Add An Item To The List</button>
                 
-                <div>
+                <div className='inputStyle'>
                 <ul>    
 
                         {this.state.list.map((itemInTheList)=>{

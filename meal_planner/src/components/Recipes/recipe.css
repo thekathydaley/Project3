@@ -1,17 +1,13 @@
 .dataBox{
     margin: 0%;
     padding: 0%;
-    
-
-
 }
-.styleExercise{
-    margin: 0%;
-    padding: 0%;   
-}
+
 .recipeForm{
     margin-left: 33%;
     margin-right: 33%;
     height: 150pt;
     width: 100vw;
+    font-size: 25pt;
 }
+

@@ -7,7 +7,7 @@ class RecipeData extends Component {
         
         return (
             <div className="dataBox">
-                <h1>Title: {data.title}</h1>
+                <h1>{data.title}</h1>
               
                 <a href={data.url}>{data.title}</a><br></br>
                 <img src= {data.image} alt="image" />               
