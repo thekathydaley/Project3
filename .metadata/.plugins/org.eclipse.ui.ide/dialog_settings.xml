@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Kathy\Desktop\demo2.zip_expanded"/>
+			<item value="C:\Users\Kathy\Desktop\users"/>
+			<item value="C:\Users\Kathy\Desktop\demo"/>
+			<item value="C:\Users\Kathy\Desktop\Mod 3 Project"/>
+			<item value="C:\Users\Kathy\Desktop\Meal_Helper1"/>
+			<item value="C:\Users\Kathy\Downloads\Meal_Helper\Meal_Helper"/>
+			<item value="C:\Users\Kathy\eclipse-workspace"/>
+			<item value="C:\Users\Kathy\Downloads\Meal_Helper"/>
+			<item value="C:\Users\Kathy\Desktop\Git Hub\Mod3Project"/>
+			<item value="C:\Users\Kathy\Desktop\Git Hub\Mod3Project\Meal_Helper"/>
+		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
+	</section>
+</section>

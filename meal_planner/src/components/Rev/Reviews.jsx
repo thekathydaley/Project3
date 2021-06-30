@@ -72,12 +72,12 @@ class Reviews extends Component {
                         }} />
                 <button onClick={() => this.addToList()}>
                     Thank you for your review!</button>
-                <div>
+                <div className='inputStyle'>
                     <ul>
 
                         {this.state.list.map((itemInTheList) => {
                             return <li>
-                                Name: {itemInTheList.name}
+                                Name: {itemInTheList.name}<br/>
                                 Review: {itemInTheList.review}
                             </li>
 

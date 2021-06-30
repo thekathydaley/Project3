@@ -53,7 +53,6 @@ class Recipes extends Component {
                 </form>
                 <RecipeData
                 title={this.state.recipeData.label}
-                calories={this.state.recipeData.calories}
                 url={this.state.recipeData.url}
                 image={this.state.recipeData.image}
                     />

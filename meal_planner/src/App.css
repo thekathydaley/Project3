@@ -6,7 +6,7 @@
   margin: 0%;
   padding: 0%;
   background-image: url("./components/bowl_image.jpg");
-   height: 100vh;
+  height: 100vh;
   width: 110vw;
   margin-top: 0%;
   justify-content: center;
@@ -36,6 +36,10 @@ h1{
   font: 14pt bold;
   font-family: 'KoHo', sans-serif;
   background: rgb(156, 236, 236);
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: solid white 2pt;
  
 }
 
@@ -56,7 +60,33 @@ button{
 }
 
 input[type=text]{
-  font-size: 30px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: solid white 2pt;
+  
+}
+.inputStyle{
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  flex-direction: column;
+  text-align: center;  
+  background-color: white;
+  font-size: 30pt;
+  font-weight: 200;
+  height: 50vh;
+  width: 50vw;
+  margin-left: 5px;
+
+}
+ul{
+  list-style-type: none;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* 
