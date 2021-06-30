@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReviewBox from './ReviewBox';
+import ReviewService from '../../service/Review';
 
 
 class Reviews extends Component {
@@ -9,12 +10,21 @@ class Reviews extends Component {
             userInput: '', //empty string
             name: "",
             review: "",
-                  
+            list: [],
+
         }
     }
-    yourName = (input) => {
+    componentDidMount(){
+        ReviewService.getReview().then((response)=>{
+            this.setState({
+                list: response.data,
+            })
+        })
+    }
+
+    changeName = (input) => {
         this.setState({
-            userInput: input
+            name: input
         },
             () => console.log(input)
         )
@@ -22,16 +32,31 @@ class Reviews extends Component {
 
     changeReview = (input) => {
         this.setState({
-            userInput: input
+            review: input
         },
             () => console.log(input)
         )
     }
+    addToList = () => {
+        let comment = {
+            name: this.state.name,
+            review: this.state.review
+        }
+        console.log(comment)
+        const array= this.state.list;
+        array.push(comment);
+        this.setState({
+            list: array,
+        })
+        console.log(array);
+        ReviewService.postReview(comment)
+    
+    }
 
-  render() {
+    render() {
         return (
             <div className="container">
-                 <input type="text"
+                <input type="text"
                     placeholder="Enter Your Name"
                     value={this.state.name}
                     onChange={
@@ -47,10 +72,22 @@ class Reviews extends Component {
                         }} />
                 <button onClick={() => this.addToList()}>
                     Thank you for your review!</button>
+                <div>
+                    <ul>
 
-            <ReviewBox/> 
+                        {this.state.list.map((itemInTheList) => {
+                            return <li>
+                                Name: {itemInTheList.name}
+                                Review: {itemInTheList.review}
+                            </li>
 
-            {/* <img src={} width="500" height="350" /> */}
+                        })}
+                    </ul> 
+                </div>
+
+                <ReviewBox />
+
+                {/* <img src={} width="500" height="350" /> */}
 
             </div>
         );
