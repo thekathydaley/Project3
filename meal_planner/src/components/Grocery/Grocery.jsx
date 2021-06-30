@@ -4,63 +4,87 @@ import HelperService from '../../service/Helper';
 
 
 class Grocery extends Component {
-    constructor(){ //required for a state along with super
+    constructor() { //required for a state along with super
         super()
-            this.state={ //to begin a state
-                userInput:'', //empty string
-                list:[],
-                delete: true
-            }
+        this.state = { //to begin a state
+            userInput: '', //empty string
+            name: "",
+            quantity: 0,
+            delete: true,
+            list: [],
+        }
     }
     //grabs the user input and sends into state
 
-    changeUserInput=(input) => {
-            this.setState({
-                userInput: input
-            }, 
+    changeUserInput = (input) => {
+        this.setState({
+            userInput: input
+        },
             () => console.log(input)
-            )
+        )
     }
 
-//function to take the user input from state and add to the list
-addToList(input){
-        //need a variable to act as the list in state
-        let input = this.state.list
-        // listArray.push(input)
+    changeQuantity = (input) => {
         this.setState({
-            list : listArray,
-            userInput : ''
-        })
-        HelperService().postHelper(input)
-        console.log(input)
-}
+            quantity: input
+        },
+            () => console.log(input)
+        )
+    }
+    //function to take the user input from state and add to the list
+    addToList = () => {
+        let thing = {
+            name: this.state.name,
+            quantity: this.state.quantity
+        }
+        console.log(thing)
+        HelperService.postHelper(thing)
+    }
+    // addToList(){
+    //         //need a variable to act as the list in state
+    //         let name = this.state.name
+    //         // listArray.push(input)
+    //         this.setState({
+    //             list : name,
+    //             userInput : ''
+    //         })
+    //         HelperService().postHelper(name)
+    //         console.log(name)
+    // }
 
-// To delete
+    // To delete
 
 
     render() {
         return (
             <div>
-                <input type="text" 
-                value={this.state.userInput} 
-                onChange={
-                    (event) => { 
-                        this.changeUserInput(event.target.value) }}/>
+                <input type="text"
+                    value={this.state.userInput}
+                    onChange={
+                        (event) => {
+                            this.changeUserInput(event.target.value)
+                        }} />
+                <input type="text"
+                    value={this.state.quantity}
+                    onChange={
+                        (event) => {
+                            this.changeQuantity(event.target.value)
+                        }} />
 
-                        <button onClick={()=>this.addToList(this.state.userInput)}>
-                            Add An Item To The List</button>
-                            
-                    {/* <ul>
+                <button onClick={() => this.addToList(this.state.userInput, this.state.quantity)}>
+                    Add An Item To The List</button>
+
+                {/* <ul>
                         {this.state.list.map((itemInTheList)=>{
                         return<li>{itemInTheList}</li>
                      
                         })}
                     </ul> */}
-                    
-                    <Item1 item={this.state.list}/>
-                    
+
+                <Item1 item={this.state.list} />
+
             </div>
-            
+
         );
     }
 }
